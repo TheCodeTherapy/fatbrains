@@ -12,7 +12,7 @@ At some point in the weekend I'll provide install instructions here. Sorry for n
 
 2. Where can I learn more about NeoVim and lua config files?
 
-   Go watch [ThePrimeagen](https://www.youtube.com/watch?v=w7i4amO_zaE) tutorial.
+   Go watch [ThePrimeagen's](https://www.youtube.com/watch?v=w7i4amO_zaE) tutorial.
 
 3. Am I really a true hero?
 
