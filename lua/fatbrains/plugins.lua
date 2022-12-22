@@ -58,6 +58,10 @@ return packer.startup(function()
   })
 
   use({
+    "thecodetherapy/nvim-ts-rainbow",
+  })
+
+  use({
     "thecodetherapy/nvim-treesitter-playground",
     requires = {
       { "thecodetherapy/nvim-treesitter" },
