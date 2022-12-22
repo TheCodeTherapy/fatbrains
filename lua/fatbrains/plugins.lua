@@ -125,8 +125,7 @@ return packer.startup(
     }
 
     use {
-      'thecodetherapy/nvim-autopairs',
-      after = 'lsp-zero.nvim'
+      'thecodetherapy/nvim-autopairs'
     }
 
     use {

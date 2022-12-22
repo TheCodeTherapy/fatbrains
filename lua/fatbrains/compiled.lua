@@ -145,10 +145,8 @@ _G.packer_plugins = {
     only_config = true
   },
   ["nvim-autopairs"] = {
-    load_after = {},
     loaded = true,
-    needs_bufread = false,
-    path = "/home/marcogomez/.local/share/nvim/site/pack/packer/opt/nvim-autopairs",
+    path = "/home/marcogomez/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
     url = "https://github.com/thecodetherapy/nvim-autopairs"
   },
   ["nvim-cmp"] = {
@@ -230,7 +228,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: null-ls.nvim
 time([[Config for null-ls.nvim]], true)
-try_loadstring("\27LJ\2\nl\0\0\5\0\b\0\f6\0\0\0009\0\1\0009\0\2\0009\0\3\0005\2\6\0006\3\0\0009\3\4\0039\3\5\3B\3\1\2=\3\a\2B\0\2\1K\0\1\0\nbufnr\1\0\0\25nvim_get_current_buf\bapi\vformat\bbuf\blsp\bvimY\0\0\4\2\a\0\v6\0\0\0009\0\1\0009\0\2\0009\0\3\0005\2\4\0-\3\0\0=\3\5\2-\3\1\0=\3\6\2B\0\2\1K\0\1\0\1À\2\0\nasync\nbufnr\1\0\0\vformat\bbuf\blsp\bviml\0\0\5\0\b\0\f6\0\0\0009\0\1\0009\0\2\0009\0\3\0005\2\6\0006\3\0\0009\3\4\0039\3\5\3B\3\1\2=\3\a\2B\0\2\1K\0\1\0\nbufnr\1\0\0\25nvim_get_current_buf\bapi\vformat\bbuf\blsp\bvim÷\3\1\2\b\3\25\00066\2\0\0'\4\1\0B\2\2\2'\4\2\0B\2\2\0019\2\3\0'\4\4\0B\2\2\2\15\0\2\0X\3\28€6\2\5\0009\2\6\0029\2\a\2'\4\b\0'\5\t\0003\6\n\0005\a\v\0=\1\f\aB\2\5\0016\2\5\0009\2\r\0029\2\14\0025\4\15\0=\1\f\4-\5\0\0=\5\16\4B\2\2\0016\2\5\0009\2\r\0029\2\17\2-\4\1\0005\5\18\0=\1\f\5-\6\0\0=\6\16\0053\6\19\0=\6\20\5B\2\3\0019\2\3\0'\4\21\0B\2\2\2\15\0\2\0X\3\t€6\2\5\0009\2\6\0029\2\a\2'\4\22\0'\5\t\0003\6\23\0005\a\24\0=\1\f\aB\2\5\0012\0\0€K\0\1\0\0À\1À\2À\1\0\1\tdesc\17[lsp] format\0\6x!textDocument/rangeFormatting\rcallback\0\1\0\1\tdesc\25[lsp] format on save\24nvim_create_autocmd\ngroup\1\0\0\24nvim_clear_autocmds\bapi\vbuffer\1\0\1\tdesc\17[lsp] format\0\14<Leader>p\6n\bset\vkeymap\bvim\28textDocument/formatting\20supports_method\22helo from null-ls\vnotify\frequireÕ\1\1\0\a\0\r\0\0226\0\0\0009\0\1\0009\0\2\0'\2\3\0005\3\4\0B\0\3\2'\1\5\0\6\1\6\0X\2\2€+\2\1\0X\3\1€+\2\2\0006\3\a\0'\5\b\0B\3\2\0029\3\t\0035\5\v\0003\6\n\0=\6\f\5B\3\2\0012\0\0€K\0\1\0\14on_attach\1\0\0\0\nsetup\fnull-ls\frequire\17bufwritepost\16bufwritepre\1\0\1\nclear\1\23lsp_format_on_save\24nvim_create_augroup\bapi\bvim\0", "config", "null-ls.nvim")
+try_loadstring("\27LJ\2\nl\0\0\5\0\b\0\f6\0\0\0009\0\1\0009\0\2\0009\0\3\0005\2\6\0006\3\0\0009\3\4\0039\3\5\3B\3\1\2=\3\a\2B\0\2\1K\0\1\0\nbufnr\1\0\0\25nvim_get_current_buf\bapi\vformat\bbuf\blsp\bvimY\0\0\4\2\a\0\v6\0\0\0009\0\1\0009\0\2\0009\0\3\0005\2\4\0-\3\0\0=\3\5\2-\3\1\0=\3\6\2B\0\2\1K\0\1\0\1À\2\0\nasync\nbufnr\1\0\0\vformat\bbuf\blsp\bviml\0\0\5\0\b\0\f6\0\0\0009\0\1\0009\0\2\0009\0\3\0005\2\6\0006\3\0\0009\3\4\0039\3\5\3B\3\1\2=\3\a\2B\0\2\1K\0\1\0\nbufnr\1\0\0\25nvim_get_current_buf\bapi\vformat\bbuf\blsp\bvimÂ\3\1\2\b\3\22\00019\2\0\0'\4\1\0B\2\2\2\15\0\2\0X\3\28€6\2\2\0009\2\3\0029\2\4\2'\4\5\0'\5\6\0003\6\a\0005\a\b\0=\1\t\aB\2\5\0016\2\2\0009\2\n\0029\2\v\0025\4\f\0=\1\t\4-\5\0\0=\5\r\4B\2\2\0016\2\2\0009\2\n\0029\2\14\2-\4\1\0005\5\15\0=\1\t\5-\6\0\0=\6\r\0053\6\16\0=\6\17\5B\2\3\0019\2\0\0'\4\18\0B\2\2\2\15\0\2\0X\3\t€6\2\2\0009\2\3\0029\2\4\2'\4\19\0'\5\6\0003\6\20\0005\a\21\0=\1\t\aB\2\5\0012\0\0€K\0\1\0\0À\1À\2À\1\0\1\tdesc\17[lsp] format\0\6x!textDocument/rangeFormatting\rcallback\0\1\0\1\tdesc\25[lsp] format on save\24nvim_create_autocmd\ngroup\1\0\0\24nvim_clear_autocmds\bapi\vbuffer\1\0\1\tdesc\17[lsp] format\0\14<Leader>p\6n\bset\vkeymap\bvim\28textDocument/formatting\20supports_methodÕ\1\1\0\a\0\r\0\0226\0\0\0009\0\1\0009\0\2\0'\2\3\0005\3\4\0B\0\3\2'\1\5\0\6\1\6\0X\2\2€+\2\1\0X\3\1€+\2\2\0006\3\a\0'\5\b\0B\3\2\0029\3\t\0035\5\v\0003\6\n\0=\6\f\5B\3\2\0012\0\0€K\0\1\0\14on_attach\1\0\0\0\nsetup\fnull-ls\frequire\17bufwritepost\16bufwritepre\1\0\1\nclear\1\23lsp_format_on_save\24nvim_create_augroup\bapi\bvim\0", "config", "null-ls.nvim")
 time([[Config for null-ls.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
@@ -238,7 +236,6 @@ vim.cmd [[ packadd nvim-treesitter ]]
 vim.cmd [[ packadd nvim-ts-autotag ]]
 vim.cmd [[ packadd lsp-zero.nvim ]]
 vim.cmd [[ packadd prettier.nvim ]]
-vim.cmd [[ packadd nvim-autopairs ]]
 time([[Sequenced loading]], false)
 if should_profile then save_profiles() end
 
