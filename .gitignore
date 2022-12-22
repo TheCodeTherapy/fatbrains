@@ -1,3 +1,4 @@
+lua/fatbrains/compiled.lua
 plugin/packer_compiled.lua
 snapshots/*
 z_resetnvim.sh
