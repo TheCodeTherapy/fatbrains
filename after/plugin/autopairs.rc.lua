@@ -8,8 +8,18 @@ npairs.setup({
     javascript = { 'string', 'template_string' },
     java = false,
   },
-  disable_filetype = { 'TelescopePrompt', 'vim' },
-  fast_wrap = {},
+  disable_filetype = { 'TelescopePrompt' },
+  fast_wrap = {
+    map = '<M-w>',
+    chars = { '{', '[', '(', '"', "'" },
+    pattern = string.gsub([[ [%'%"%)%>%]%)%}%,] ]], "%s+", ""),
+    offset = 0,
+    end_key = '$',
+    keys = 'qwertyuiopzxcvbnmasdfghjkl',
+    check_comma = true,
+    highlight = 'PmenuSel',
+    highlight_grey = 'LineNr',
+  },
 })
 
 local cmpstatus, cmp = pcall(require, 'cmp')
