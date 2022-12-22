@@ -1,16 +1,15 @@
-local treesitterstatus, ts = pcall(require, 'nvim-treesitter.configs')
-if (not treesitterstatus) then
-  print('nvim-treesitter not installed. Please run :PackerInstall')
+local treesitterstatus, ts = pcall(require, "nvim-treesitter.configs")
+if not treesitterstatus then
   return
 else
-  ts.setup {
-    ensure_installed = { 'help', 'vim', 'c', 'lua', 'rust', 'json', 'css', 'javascript', 'typescript' },
+  ts.setup({
+    ensure_installed = { "help", "vim", "c", "lua", "rust", "json", "css", "javascript", "typescript" },
     sync_install = false,
     auto_install = true,
     ignore_install = {},
     indent = {
       enable = true,
-      disable = {}
+      disable = {},
     },
     highlight = {
       enable = true,
@@ -24,6 +23,5 @@ else
       end,
       additional_vim_regex_highlighting = false,
     },
-  }
+  })
 end
-

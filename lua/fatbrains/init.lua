@@ -1,3 +1,3 @@
-require('fatbrains.base')
-require('fatbrains.remap')
-require('fatbrains.plugins')
+require("fatbrains.base")
+require("fatbrains.remap")
+require("fatbrains.plugins")

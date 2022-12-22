@@ -1,1 +1,1 @@
-require('fatbrains')
+require("fatbrains")
