@@ -5,8 +5,8 @@ end
 
 tnight.setup({
   style = "storm",
-  transparent = true,
+  transparent = false,
 })
 
 vim.cmd([[colorscheme tokyonight-night]])
-vim.cmd([[hi NvimTreeNormal guibg=NONE ctermbg=NONE]])
+--vim.cmd([[hi NvimTreeNormal guibg=NONE ctermbg=NONE]])
