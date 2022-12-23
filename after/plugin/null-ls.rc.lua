@@ -25,7 +25,7 @@ local sources = {
 nls.setup({
   sources = sources,
   on_attach = function(client, bufnr)
-    require("notify")("null-ls attached")
+    -- require("notify")("null-ls attached")
     if client.supports_method("textDocument/formatting") then
       vim.keymap.set("n", "<C-p>", function()
         vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
