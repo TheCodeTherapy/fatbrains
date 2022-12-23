@@ -27,7 +27,7 @@ nvimtree.setup({
     },
   },
   renderer = {
-    group_empty = true,
+    group_empty = false,
     add_trailing = false,
     highlight_git = false,
     full_name = false,
@@ -63,7 +63,7 @@ nvimtree.setup({
     },
   },
   filters = {
-    dotfiles = true,
+    dotfiles = false,
     exclude = {},
   },
   remove_keymaps = { "s" },
