@@ -1,28 +1,15 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
--- Don't yank with x
-vim.keymap.set("n", "x", '"_x')
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- project view with Ex
+vim.keymap.set("n", "x", '"_x') -- don't yank with x
+vim.keymap.set("n", "+", "<C-a>") -- increments number under cursor
+vim.keymap.set("n", "-", "<C-x>") -- decrements number under cursor
+vim.keymap.set("n", "dw", 'vb"_d') -- delete word backwards
 
--- Increment/decrement
-vim.keymap.set("n", "+", "<C-a>")
-vim.keymap.set("n", "-", "<C-x>")
-
--- Delete word backwards
-vim.keymap.set("n", "dw", 'vb"_d')
-
--- Select all
-vim.keymap.set("n", "<C-a>", "gg<S-v>G")
-
--- New tab
-vim.keymap.set("n", "te", ":tabedit<Return>", { silent = true })
-
--- Split window
-vim.keymap.set("n", "zs", ":split<Return><C-w>w", { silent = true })
-vim.keymap.set("n", "zv", ":vsplit<Return><C-w>w", { silent = true })
-
--- Navigate through windows
-vim.keymap.set("n", "<Space>", "<C-w>w") -- cycle through
+vim.keymap.set("n", "te", ":tabedit<Return>", { silent = true }) -- new tab
+vim.keymap.set("n", "zs", ":split<Return><C-w>w", { silent = true }) -- horizontal split
+vim.keymap.set("n", "zv", ":vsplit<Return><C-w>w", { silent = true }) -- vertical split
+vim.keymap.set("n", "<leader><leader>", "<C-w>w") -- cycle through
 vim.keymap.set("n", "z<up>", "<C-w>k") -- focus up
 vim.keymap.set("n", "z<right>", "<C-w>l") -- focus right
 vim.keymap.set("n", "z<down>", "<C-w>j") -- focus down
@@ -33,29 +20,31 @@ vim.keymap.set("n", "zj", "<C-w>j") -- focus down
 vim.keymap.set("n", "zh", "<C-w>h") -- focus left
 vim.keymap.set("n", "zc", "<C-w>c") -- close focused
 
--- Resize window
-vim.keymap.set("n", "<C-w><left>", "<C-w><")
-vim.keymap.set("n", "<C-w><right>", "<C-w>>")
-vim.keymap.set("n", "<C-w><up>", "<C-w>+")
-vim.keymap.set("n", "<C-w><down>", "<C-w>-")
+vim.keymap.set("n", "<C-w><left>", "<C-w><") -- resize left
+vim.keymap.set("n", "<C-w><right>", "<C-w>>") -- resize right
+vim.keymap.set("n", "<C-w><up>", "<C-w>+") -- resize up
+vim.keymap.set("n", "<C-w><down>", "<C-w>-") -- resize down
 
--- Reload configs
-vim.keymap.set("n", "<C-R>", "<cmd>:so<cr>")
+vim.keymap.set("n", "<leader>e", "<cmd>:NvimTreeToggle<cr>") -- toggle tree
+vim.keymap.set("n", "<F7>", '<cmd>:echo expand("%:p")<cr>') -- show full buffer path
 
--- Toggle nvim-tree
-vim.keymap.set("n", "<leader>e", "<cmd>:NvimTreeToggle<cr>")
-vim.keymap.set("n", "<F7>", '<cmd>:echo expand("%:p")<cr>')
+vim.keymap.set("n", "J", "mzJ`z") -- pull line below to the end of current one
+vim.keymap.set("x", "<leader>p", '"_dP') -- paste over selection keeping current yank
 
--- Move stuff
-vim.keymap.set("v", "<C-Up>", ":m '<-2<cr>gv=gv")
-vim.keymap.set("v", "<C-Down>", ":m '>+1<cr>gv=gv")
-vim.keymap.set("n", "<C-Up>", "<C-u>zz")
-vim.keymap.set("n", "<C-Down>", "<C-d>zz")
-vim.keymap.set("n", "J", "mzJ`z")
+if vim.fn.has("macunix") then
+  vim.keymap.set("n", "<C-a>", "gg<S-v>G") -- select all
+  vim.keymap.set("v", "<M-Up>", ":m '<-2<cr>gv=gv") -- move selecttion up
+  vim.keymap.set("v", "<M-Down>", ":m '>+1<cr>gv=gv") -- move selection down
+  vim.keymap.set("n", "<M-Up>", "<C-u>zz") -- scroll up keeping cursor centered
+  vim.keymap.set("n", "<M-Down>", "<C-d>zz") -- scroll down keeping cursor centered
+  vim.keymap.set("n", "<C-r>", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- replace
+else
+  vim.keymap.set("n", "<C-a>", "gg<S-v>G") -- select all
+  vim.keymap.set("v", "<C-Up>", ":m '<-2<cr>gv=gv") -- move selecttion up
+  vim.keymap.set("v", "<C-Down>", ":m '>+1<cr>gv=gv") -- move selection down
+  vim.keymap.set("n", "<C-Up>", "<C-u>zz") -- scroll up keeping cursor centered
+  vim.keymap.set("n", "<C-Down>", "<C-d>zz") -- scroll down keeping cursor centered
+  vim.keymap.set("n", "<C-r>", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- replace
+end
 
--- Sane paste and replaces
-vim.keymap.set("x", "<leader>p", '"_dP')
-vim.keymap.set("n", "<C-r>", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-
--- Hatred
-vim.keymap.set("n", "Q", "<nop>")
+vim.keymap.set("n", "Q", "<nop>") -- Q is bad
