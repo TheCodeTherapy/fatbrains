@@ -46,5 +46,6 @@ else
   vim.keymap.set("n", "<C-Down>", "<C-d>zz") -- scroll down keeping cursor centered
   vim.keymap.set("n", "<C-r>", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- replace
 end
-
 vim.keymap.set("n", "Q", "<nop>") -- Q is bad
+vim.keymap.set("i", "<S-End>", "<esc>vg_y<cmd>:echo 'yanked'<CR>")
+vim.keymap.set("n", "<S-End>", "vg_y<cmd>:echo 'yanked'<CR>")
