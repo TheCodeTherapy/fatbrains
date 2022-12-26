@@ -31,21 +31,21 @@ vim.keymap.set("n", "<F7>", '<cmd>:echo expand("%:p")<cr>') -- show full buffer 
 vim.keymap.set("n", "J", "mzJ`z") -- pull line below to the end of current one
 vim.keymap.set("x", "<leader>p", '"_dP') -- paste over selection keeping current yank
 
+vim.keymap.set("n", "<C-a>", "gg<S-v>G") -- select all
+vim.keymap.set("n", "<C-r>", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- replace
+
 if vim.fn.has("macunix") then
-  vim.keymap.set("n", "<C-a>", "gg<S-v>G") -- select all
   vim.keymap.set("v", "<M-Up>", ":m '<-2<cr>gv=gv") -- move selecttion up
   vim.keymap.set("v", "<M-Down>", ":m '>+1<cr>gv=gv") -- move selection down
   vim.keymap.set("n", "<M-Up>", "<C-u>zz") -- scroll up keeping cursor centered
   vim.keymap.set("n", "<M-Down>", "<C-d>zz") -- scroll down keeping cursor centered
-  vim.keymap.set("n", "<C-r>", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- replace
 else
-  vim.keymap.set("n", "<C-a>", "gg<S-v>G") -- select all
   vim.keymap.set("v", "<C-Up>", ":m '<-2<cr>gv=gv") -- move selecttion up
   vim.keymap.set("v", "<C-Down>", ":m '>+1<cr>gv=gv") -- move selection down
   vim.keymap.set("n", "<C-Up>", "<C-u>zz") -- scroll up keeping cursor centered
   vim.keymap.set("n", "<C-Down>", "<C-d>zz") -- scroll down keeping cursor centered
-  vim.keymap.set("n", "<C-r>", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- replace
 end
+
 vim.keymap.set("n", "Q", "<nop>") -- Q is bad
 vim.keymap.set("i", "<S-End>", "<esc>vg_y<cmd>:echo 'yanked'<CR>")
 vim.keymap.set("n", "<S-End>", "vg_y<cmd>:echo 'yanked'<CR>")
