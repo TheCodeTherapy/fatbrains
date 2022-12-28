@@ -52,8 +52,7 @@ local setup = function()
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
   end
   vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
-  vim.lsp.handlers["textDocument/signatureHelp"] =
-  vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+  vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
 end
 
 nvim_lsp.tsserver.setup({
@@ -79,5 +78,35 @@ nvim_lsp.sumneko_lua.setup({
         maxPreload = 10000,
       },
     },
+  },
+})
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities.textDocument.completion.completionItem.resolveSupport = {
+  properties = { "documentation", "detail", "additionalTextEdits" },
+}
+local cmp_capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+local clangd_capabilities = cmp_capabilities
+clangd_capabilities.textDocument.semanticHighlighting = true
+clangd_capabilities.offsetEncoding = "utf-8"
+
+local lspconfig = require("lspconfig.configs")
+lspconfig.clangd.setup({
+  capabilities = clangd_capabilities,
+  cmd = {
+    "clangd",
+    "--background-index",
+    "--pch-storage=memory",
+    "--clang-tidy",
+    "--suggest-missing-includes",
+    "--cross-file-rename",
+    "--completion-style=detailed",
+  },
+  init_options = {
+    clangdFileStatus = true,
+    usePlaceholders = true,
+    completeUnimported = true,
+    semanticHighlighting = true,
   },
 })
