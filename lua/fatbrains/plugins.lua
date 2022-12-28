@@ -111,6 +111,14 @@ return packer.startup(function()
     "thecodetherapy/gitsigns.nvim",
   })
 
+  use({
+    "thecodetherapy/toggleterm.nvim",
+    tag = "*",
+    config = function()
+      require("toggleterm").setup()
+    end,
+  })
+
   if fatbrains_packer.first_install then
     packer.install()
   end

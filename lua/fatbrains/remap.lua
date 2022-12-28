@@ -34,6 +34,14 @@ vim.keymap.set("x", "<leader>p", '"_dP') -- paste over selection keeping current
 vim.keymap.set("n", "<C-a>", "gg<S-v>G") -- select all
 vim.keymap.set("n", "<C-r>", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- replace
 
+vim.keymap.set("n", "<C-\\>", "<cmd>:ToggleTerm<cr>")
+vim.keymap.set("i", "<C-\\>", "<esc><cmd>:ToggleTerm<cr>")
+vim.keymap.set("t", "<C-\\>", [[<C-\><C-n><cmd>:ToggleTerm<cr>]])
+vim.keymap.set("t", "<C-z><up>", [[<C-\><C-n><C-w>k]])
+vim.keymap.set("t", "<C-z><right>", [[<C-\><C-n><C-w>l]])
+vim.keymap.set("t", "<C-z><down>", [[<C-\><C-n><C-w>j]])
+vim.keymap.set("t", "<C-z><left>", [[<C-\><C-n><C-w>h]])
+
 if vim.fn.has("macunix") then
   vim.keymap.set("v", "<M-Up>", ":m '<-2<cr>gv=gv") -- move selecttion up
   vim.keymap.set("v", "<M-Down>", ":m '>+1<cr>gv=gv") -- move selection down
