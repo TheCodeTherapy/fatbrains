@@ -20,6 +20,12 @@ require("mason-lspconfig").setup({
     "clangd",
     "dockerls",
     "pyright",
+    "taplo",
+    "bashls",
+    "dockerls",
+    "jsonls",
+    "tailwindcss",
+    "vimls",
   },
   automatic_installation = true,
 })
