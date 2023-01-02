@@ -11,15 +11,15 @@ vim.keymap.set("n", "te", ":tabedit<Return>", { silent = true }) -- new tab
 vim.keymap.set("n", "zs", ":split<Return><C-w>w", { silent = true }) -- horizontal split
 vim.keymap.set("n", "zv", ":vsplit<Return><C-w>w", { silent = true }) -- vertical split
 vim.keymap.set("n", "<leader><leader>", "<C-w>w") -- cycle through
-vim.keymap.set("n", "z<up>", "<C-w>k") -- focus up
-vim.keymap.set("n", "z<right>", "<C-w>l") -- focus right
-vim.keymap.set("n", "z<down>", "<C-w>j") -- focus down
-vim.keymap.set("n", "z<left>", "<C-w>h") -- focus left
-vim.keymap.set("n", "zk", "<C-w>k") -- focus up
-vim.keymap.set("n", "zl", "<C-w>l") -- focus right
-vim.keymap.set("n", "zj", "<C-w>j") -- focus down
-vim.keymap.set("n", "zh", "<C-w>h") -- focus left
-vim.keymap.set("n", "zc", "<C-w>c") -- close focused
+vim.keymap.set("n", "<leader><up>", "<C-w>k") -- focus up
+vim.keymap.set("n", "<leader><right>", "<C-w>l") -- focus right
+vim.keymap.set("n", "<leader><down>", "<C-w>j") -- focus down
+vim.keymap.set("n", "<leader><left>", "<C-w>h") -- focus left
+vim.keymap.set("n", "<leader>k", "<C-w>k") -- focus up
+vim.keymap.set("n", "<leader>l", "<C-w>l") -- focus right
+vim.keymap.set("n", "<leader>j", "<C-w>j") -- focus down
+vim.keymap.set("n", "<leader>h", "<C-w>h") -- focus left
+vim.keymap.set("n", "<leader>c", "<C-w>c") -- close focused
 
 vim.keymap.set("n", "<C-w><left>", "<C-w><") -- resize left
 vim.keymap.set("n", "<C-w><right>", "<C-w>>") -- resize right

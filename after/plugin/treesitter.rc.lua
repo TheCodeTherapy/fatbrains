@@ -34,32 +34,13 @@ else
   })
 end
 
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-
 vim.api.nvim_command([[augroup highlight_current_word]])
 vim.api.nvim_command([[au!]])
 vim.api.nvim_command([[au CursorHold * :exec 'match Search /\V\<' . expand('<cword>') . '\>/']])
 vim.api.nvim_command([[augroup END]])
 vim.api.nvim_command([[:set updatetime=500]])
 
-local M = {}
-function M.nvim_create_augroups(definitions)
-  for group_name, definition in pairs(definitions) do
-    vim.api.nvim_command("augroup " .. group_name)
-    vim.api.nvim_command("autocmd!")
-    for _, def in ipairs(definition) do
-      local command = table.concat(vim.tbl_flatten({ "autocmd", def }), " ")
-      vim.api.nvim_command(command)
-    end
-    vim.api.nvim_command("augroup END")
-  end
-end
-
-local auto_commands = {
-  open_folds = {
-    { "BufReadPost,FileReadPost", "*", "normal zR" },
-  },
-}
-
-M.nvim_create_augroups(auto_commands)
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+--vim.api.nvim_command([[:set foldcolumn=5]])
+vim.api.nvim_command([[:set foldlevel=99]])
