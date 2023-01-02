@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.keymap.set("i", "jk", "<esc>")
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- project view with Ex
 vim.keymap.set("n", "x", '"_x') -- don't yank with x
@@ -57,3 +58,9 @@ end
 vim.keymap.set("n", "Q", "<nop>") -- Q is bad
 vim.keymap.set("i", "<S-End>", "<esc>vg_y<cmd>:echo 'yanked'<CR>")
 vim.keymap.set("n", "<S-End>", "vg_y<cmd>:echo 'yanked'<CR>")
+
+vim.api.nvim_command([[augroup highlight_current_word]])
+vim.api.nvim_command([[au!]])
+vim.api.nvim_command([[au CursorHold * :exec 'match Search /\V\<' . expand('<cword>') . '\>/']])
+vim.api.nvim_command([[augroup END]])
+vim.api.nvim_command([[:set updatetime=500]])
