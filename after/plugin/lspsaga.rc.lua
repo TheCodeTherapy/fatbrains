@@ -5,6 +5,17 @@ end
 
 lspsaga.init_lsp_saga({
   border_style = "rounded",
+  move_in_saga = { prev = "<C-p>", next = "<C-n>" },
+  diagnostic_header = { " ", " ", " ", "ﴞ " },
+  code_action_lightbulb = {
+    enable = true,
+    enable_in_insert = true,
+    cache_code_action = true,
+    sign = true,
+    update_time = 150,
+    sign_priority = 20,
+    virtual_text = false,
+  },
   server_filetype_map = {},
   finder_action_keys = {
     tabe = { "o", "<CR>" },
