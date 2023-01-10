@@ -59,9 +59,9 @@ vim.keymap.set("n", "Q", "<nop>") -- Q is bad
 vim.keymap.set("i", "<S-End>", "<esc>vg_y<cmd>:echo 'yanked'<CR>")
 vim.keymap.set("n", "<S-End>", "vg_y<cmd>:echo 'yanked'<CR>")
 
-vim.keymap.set(-- fancy fuzzy search for the word under the cursor
+vim.keymap.set( -- fancy fuzzy search for the word under the cursor
   "n",
-  "<C-r>",
+  "<C-f>",
   "<cmd>:lua require'telescope.builtin'.grep_string({search = vim.fn.expand(\"<cword>\")})<CR>"
 )
 
